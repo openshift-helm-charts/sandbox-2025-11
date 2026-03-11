@@ -1,0 +1,10 @@
+chart:
+  name: vault
+  shortDescription: Test chart for testing chart submission workflows.
+publicPgpKey: null
+providerDelivery: False
+users:
+- githubUsername: openshift-helm-charts-bot
+vendor:
+  label: hashicorp-d0e7dc1a725a4ba19c136f2016a41619-497
+  name: hashicorp-d0e7dc1a725a4ba19c136f2016a41619-497
