@@ -1,3 +1,37 @@
 apiVersion: v1
-entries: {}
-generated: '2025-11-11T03:06:39.760924+00:00'
+entries:
+  vault-test-timeout:
+  - annotations:
+      charts.openshift.io/digest: sha256:f938ad76fc0c01a10053cfa897d95bf0b1f259ba27b5d3e7d8b09300018d23ed
+      charts.openshift.io/lastCertifiedTimestamp: '2026-04-19T07:18:33.715668+00:00'
+      charts.openshift.io/name: vault-test-timeout
+      charts.openshift.io/provider: redhat-451f19765dd74bc8ad4d106143524c73
+      charts.openshift.io/providerType: community
+      charts.openshift.io/submissionTimestamp: '2026-04-19T07:20:39.794866+00:00'
+      charts.openshift.io/supportedOpenShiftVersions: '>=4.2'
+      charts.openshift.io/testedOpenShiftVersion: N/A
+    apiVersion: v2
+    appVersion: 1.8.4
+    description: Official HashiCorp Vault Chart
+    digest: ba21786f9dfd24d449863b75ba6e91568c0e8da553ad562537a9b91f5d93acba
+    home: https://www.vaultproject.io
+    icon: https://github.com/hashicorp/vault/raw/f22d202cde2018f9455dec755118a9b84586e082/Vault_PrimaryLogo_Black.png
+    keywords:
+    - vault
+    - security
+    - encryption
+    - secrets
+    - management
+    - automation
+    - infrastructure
+    kubeVersion: '>= 1.14.0-0'
+    name: vault-test-timeout
+    sources:
+    - https://github.com/hashicorp/vault
+    - https://github.com/hashicorp/vault-helm
+    - https://github.com/hashicorp/vault-k8s
+    - https://github.com/hashicorp/vault-csi-provider
+    urls:
+    - https://github.com/openshift-helm-charts/sandbox-2025-11/releases/download/redhat-451f19765dd74bc8ad4d106143524c73-vault-test-timeout-0.17.0/vault-test-timeout-0.17.0.tgz
+    version: 0.17.0
+generated: '2026-04-19T07:20:39.793883+00:00'
