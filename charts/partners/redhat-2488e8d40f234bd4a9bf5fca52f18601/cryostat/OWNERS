@@ -1,0 +1,10 @@
+chart:
+  name: cryostat
+  shortDescription: Test chart for testing chart submission workflows.
+publicPgpKey: null
+providerDelivery: False
+users:
+- githubUsername: openshift-helm-charts-bot
+vendor:
+  label: redhat-2488e8d40f234bd4a9bf5fca52f18601
+  name: redhat-2488e8d40f234bd4a9bf5fca52f18601
