@@ -1,0 +1,10 @@
+chart:
+  name: redhat-prefixed-b28a116a33a24e9d9473a30a203063d9
+  shortDescription: Test chart for testing chart submission workflows.
+publicPgpKey: null
+providerDelivery: false
+users:
+- githubUsername: openshift-helm-charts-bot
+vendor:
+  label: redhat
+  name: "Red Hat"
