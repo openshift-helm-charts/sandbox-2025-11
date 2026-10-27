@@ -1,0 +1,10 @@
+chart:
+  name: missing-prefix-b98ddec90076427f818047159aada250-544
+  shortDescription: Test chart for testing chart submission workflows.
+publicPgpKey: null
+providerDelivery: false
+users:
+- githubUsername: openshift-helm-charts-bot
+vendor:
+  label: redhat
+  name: "Red Hat"
