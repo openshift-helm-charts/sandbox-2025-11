@@ -36,7 +36,9 @@ runs:
     uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2 # v10.3.3
     with:
       version: "0.13.7"
-      cache-dependency-glob: "${{ inputs.working-directory }}/scripts/uv.lock"
+      # pull_request_target jobs share the base repo's cache scope and run PR
+      # build code, so a PR could poison a cache that trusted runs restore.
+      enable-cache: false
 
   - name: Setup venv (uv)
     if: steps.detect.outputs.manager == 'uv'
@@ -50,9 +52,8 @@ runs:
       cd scripts
       # Not `make install`: the target only exists in the migrated Makefile,
       # and uv.lock is the thing that says the lock is authoritative.
-      # The interpreter is left to uv, which resolves requires-python from
-      # pyproject.toml and downloads it if the runner has nothing suitable.
-      uv sync --locked --group test
+      # Use the interpreter the caller configured, as the pip path does.
+      uv sync --locked --group test --python "${{ inputs.python-version }}"
 
   - name: Setup venv (pip)
     if: steps.detect.outputs.manager == 'pip'
