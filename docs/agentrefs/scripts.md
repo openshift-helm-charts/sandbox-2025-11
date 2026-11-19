@@ -8,20 +8,21 @@ Python source for the CI scripts invoked by the workflows in [`.github/`](../../
 
 ## Setup and validation
 
-Everything runs through `scripts/Makefile` using two virtualenvs in `scripts/`: `venv.codestyle` (Black and Ruff, used by `format`/`lint`) and `venv.tools` (the CI scripts package, built from `scripts/requirements.txt` plus the package itself). Run these commands from `scripts/`:
+Everything runs through `scripts/Makefile`, which uses [uv](https://docs.astral.sh/uv/) and the committed `scripts/uv.lock`. Two environments are used: `scripts/.venv` (the CI scripts package plus test dependencies) and `scripts/venv.lint` (Black and Ruff only). Run these commands from `scripts/`:
 
 ```bash
-make venv.tools # Installs CI scripts to venv.tools. Append .always-reinstall after making changes.
-make format     # Installs dependencies before running style tools
-make lint       # Installs dependencies before running lint tools
+make install    # Installs CI scripts (editable) and test deps into .venv
+make format     # Installs lint tools before running Black
+make lint       # Installs lint tools before running Ruff
 ```
 
 Code style is checked with Ruff (configured in `scripts/ruff.toml`); run `make format` before submitting.
 
-Unit tests for `scripts/src/` run with pytest. To run them locally, install the tools virtualenv (`make venv.tools` from `scripts/`) and run pytest from it:
+Unit tests for `scripts/src/` run with pytest. To run them locally:
 
 ```bash
-./venv.tools/bin/pytest src/
+make install
+uv run --group test pytest src/
 ```
 
 ## Conventions

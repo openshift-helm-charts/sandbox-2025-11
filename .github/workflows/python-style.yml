@@ -5,6 +5,9 @@ on:
     paths:
     # Only trigger on core script changes
     - 'scripts/**.py'
+    - 'scripts/Makefile'
+    - 'scripts/pyproject.toml'
+    - 'scripts/uv.lock'
 
 jobs:
   enforce:
@@ -18,7 +21,7 @@ jobs:
       uses: ./.github/actions/setup-python
     - name: Install style tooling
       working-directory: scripts
-      run: make venv.codestyle
+      run: make install.lint
     - name: Run formatter
       working-directory: scripts
       run: make ci.format
